@@ -780,6 +780,19 @@ section,
 #resume-title{
   padding-bottom: 10px;
 }
+
+.btn.btn-primary.resume-btn {
+  margin-left: 20px;
+  background-color: white;
+  border: 1px solid darkgray; /* Border color */
+}
+
+.btn.btn-primary.resume-btn:hover {
+  border: 1px solid var(--accent-color); /* Change border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1094,6 +1107,18 @@ section,
   color: var(--contrast-color);
 }
 
+.btn.btn-primary.submit-btn {
+  margin-left: 20px;
+  background-color: white;
+  border: 1px solid darkgray; /* Border color */
+  color: var(--accent-color);
+}
+
+.btn.btn-primary.submit-btn:hover {
+  border: 1px solid var(--accent-color); /* Change border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
 .contact .php-email-form {
   background-color: var(--surface-color);
   height: 100%;
@@ -1102,7 +1127,7 @@ section,
 }
 
 @media (max-width: 575px) {
-  .contact .php-email-form {
+  .contact {
     padding: 20px;
   }
 }
