@@ -299,7 +299,7 @@
                     </div>
 
                     <div class="col-md-12 text-center">
-                      <button id="contact-submit" type="submit">Send Message</button>
+                      <button class = "btn btn-primary" id="contact-submit" type="submit">Send Message</button>
                     </div>
 
                   </div>
@@ -356,40 +356,6 @@
   <!-- Include EmailJS SDK -->
   <script type="text/javascript" src="assets/js/config.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <script type="text/javascript">
-    emailjs.init('yMV-mIlAzj-gNuKyo')
-  </script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function () {
-      emailjs.init(config.emailID); //please encrypted user id for malicious attacks
-
-      document.getElementById('contact-form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the form from submitting the default way
-
-        var name = document.getElementById('name-field').value;
-        var email = document.getElementById('email-field').value;
-        var subject = document.getElementById('subject-field').value;
-        var message = document.getElementById('message-field').value;
-
-        //set the parameter as per you template parameter[https://dashboard.emailjs.com/templates]
-        var templateParams = {
-          from_name: name,
-          from_email: email,
-          subject: subject,
-          message: message
-        };
-
-        emailjs.send(config.serviceID, config.templateID, templateParams)
-          .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-          }, function (error) {
-            console.log('FAILED...', error);
-          });
-      });
-    });
-  </script>
-
 </body>
 
 </html>

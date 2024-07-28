@@ -227,3 +227,34 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init(config.emailID); //please encrypted user id for malicious attacks
+
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting the default way
+
+    var name = document.getElementById('name-field').value;
+    var email = document.getElementById('email-field').value;
+    var subject = document.getElementById('subject-field').value;
+    var message = document.getElementById('message-field').value;
+
+    //set the parameter as per you template parameter[https://dashboard.emailjs.com/templates]
+    var templateParams = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message
+    };
+
+    emailjs.send(config.serviceID, config.templateID, templateParams)
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        document.getElementById('contact-form').reset();
+        alert('Success! Looking forward to connect with you soon!')
+      }, function (error) {
+        console.log('FAILED...', error);
+        alert('Sorry! Your message was not sent. Please try again or at a later time.')
+      });
+  });
+});
