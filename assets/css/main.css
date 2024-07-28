@@ -725,7 +725,7 @@ section,
   color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -777,6 +777,9 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+#resume-title{
+  padding-bottom: 10px;
+}
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
